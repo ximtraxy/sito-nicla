@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import GalleryInput from '../components/GalleryInput';
 
 export default defineType({
   name: 'project',
@@ -86,6 +87,9 @@ export default defineType({
       name: 'gallery',
       title: 'Galleria Immagini',
       type: 'array',
+      components: {
+        input: GalleryInput,
+      },
       options: {
         layout: 'grid',
       },
