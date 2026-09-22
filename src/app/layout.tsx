@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | Nicla Cristiano',
   },
   description:
-    'Portfolio fotografico di Nicla Cristiano: ritratti intimi, reportage, moda ed estetica editoriale.',
+    'Portfolio fotografico di Nicla Cristiano.',
   keywords: [
     'Nicla Cristiano',
     'fotografa',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Nicla Cristiano | Portfolio Fotografico',
     description:
-      'Portfolio fotografico di Nicla Cristiano: ritratti intimi, reportage, moda ed estetica editoriale.',
+      'Portfolio fotografico di Nicla Cristiano.',
     url: 'https://niclacristiano.com',
     siteName: 'Nicla Cristiano Portfolio',
     images: [
