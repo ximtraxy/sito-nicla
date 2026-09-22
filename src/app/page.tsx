@@ -1,5 +1,6 @@
 import SplashScreen from '@/components/SplashScreen';
 import ProjectGrid from '@/components/ProjectGrid';
+import FormattedText from '@/components/FormattedText';
 import { sanityFetch } from '@/sanity/client';
 import { HOME_PROJECTS_QUERY, SITE_SETTINGS_QUERY } from '@/sanity/queries';
 import { mockProjects, mockSiteSettings } from '@/sanity/mockData';
@@ -65,10 +66,13 @@ export default async function HomePage() {
             <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-neutral-100 font-light tracking-tight leading-[1.05]">
               Nicla Cristiano
             </h1>
-            <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-neutral-300 w-full mt-6 font-light leading-relaxed whitespace-pre-line">
-              {settings.heroText ||
-                'La fotografia come racconto intimo, estetica editoriale e ricerca della luce autentica.'}
-            </p>
+            <FormattedText
+              text={
+                settings.heroText ||
+                'La fotografia come racconto intimo, estetica editoriale e ricerca della luce autentica.'
+              }
+              className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-neutral-300 w-full mt-6 font-light leading-relaxed"
+            />
           </div>
 
           <div className="mt-12 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-sans tracking-widest uppercase text-neutral-400">

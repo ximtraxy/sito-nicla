@@ -1,4 +1,5 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react';
+import FormattedText from './FormattedText';
 
 interface PortableBodyProps {
   content: any;
@@ -57,11 +58,10 @@ export default function PortableBody({ content, className = '' }: PortableBodyPr
   // Se il contenuto è una stringa semplice invece di blocchi PortableText
   if (typeof content === 'string') {
     return (
-      <div className={`space-y-4 font-sans text-base sm:text-lg leading-relaxed text-neutral-300 font-light ${className}`}>
-        {content.split('\n\n').map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
-      </div>
+      <FormattedText
+        text={content}
+        className={`space-y-4 font-sans text-base sm:text-lg leading-relaxed text-neutral-300 font-light ${className}`}
+      />
     );
   }
 
