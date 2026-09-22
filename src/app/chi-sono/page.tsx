@@ -64,7 +64,7 @@ export default async function AboutPage() {
               Profilo Artistico
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-neutral-100 font-light tracking-tight mt-2 mb-8 leading-tight">
-              Catturare l&apos;autenticità della luce e del tempo.
+              Ogni fotografia è un universo da fermo.
             </h1>
 
             {/* Testo Biografico con PortableBody */}
@@ -76,7 +76,7 @@ export default async function AboutPage() {
           {/* Citazione editoriale d'impatto */}
           <div className="p-8 border-y border-white/10 bg-neutral-950/40">
             <blockquote className="font-serif text-xl sm:text-2xl text-neutral-200 font-light italic leading-relaxed">
-              &ldquo;Ogni fotografia è un dialogo silenzioso tra ciò che si rivela e ciò che resta in ombra. Non cerco la perfezione, ma la vibrazione viva dell&apos;istante.&rdquo;
+              Se c&apos;è una certezza in questo momento, è che amo raccontare le storie delle persone e catturare le cose reali che accadono intorno a me.
             </blockquote>
             <p className="font-sans text-xs tracking-widest uppercase text-neutral-400 mt-4">
               — Nicla Cristiano
@@ -90,7 +90,7 @@ export default async function AboutPage() {
                 Iniziamo un Progetto
               </h2>
               <p className="font-sans text-sm text-neutral-400 leading-relaxed max-w-xl">
-                Per informazioni su shooting fotografici, collaborazioni editoriali, matrimoni o stampe fine-art, scrivi direttamente o contattami sui canali social.
+                Per informazioni su shooting fotografici, progetti, scrivi direttamente o contattami sui canali social.
               </p>
             </div>
 
