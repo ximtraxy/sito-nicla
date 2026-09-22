@@ -58,14 +58,14 @@ export default async function HomePage() {
 
         {/* Hero Editoriale */}
         <section className="mb-16 md:mb-24 pt-6">
-          <div className="max-w-4xl">
+          <div className="w-full">
             <p className="font-sans text-xs sm:text-sm tracking-widest uppercase text-neutral-400 mb-4 font-medium">
               {settings.tagline || 'Fotografia & Visual Storytelling'}
             </p>
             <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-neutral-100 font-light tracking-tight leading-[1.05]">
               Nicla Cristiano
             </h1>
-            <p className="font-sans text-sm sm:text-base md:text-lg text-neutral-400 max-w-2xl mt-6 font-light leading-relaxed">
+            <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-neutral-300 w-full mt-6 font-light leading-relaxed whitespace-pre-line">
               {settings.heroText ||
                 'La fotografia come racconto intimo, estetica editoriale e ricerca della luce autentica.'}
             </p>

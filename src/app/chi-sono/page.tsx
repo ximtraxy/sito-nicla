@@ -34,8 +34,8 @@ export default async function AboutPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        {/* Colonna Foto Profilo */}
-        <div className="lg:col-span-5 sticky top-28">
+        {/* Colonna Foto Profilo (sticky solo su desktop/schermi grandi) */}
+        <div className="lg:col-span-5 lg:sticky lg:top-28">
           <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-900 border border-white/5 rounded-sm shadow-2xl">
             <Image
               src={profileImageUrl}

@@ -5,43 +5,40 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function SplashScreen() {
-  const [isAtTop, setIsAtTop] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Controllo iniziale dello scroll
-    const checkScroll = () => {
-      if (typeof window !== 'undefined') {
-        // Se lo scroll è a 0 (o micro-scostamenti inferiori a 5px), lo splash è visibile
-        setIsAtTop(window.scrollY <= 5);
+    // Controllo dello scroll: scompare non appena si scorre
+    const handleScroll = () => {
+      if (typeof window !== 'undefined' && window.scrollY > 20) {
+        setIsVisible(false);
       }
     };
 
-    checkScroll();
-
-    // Ascolto dello scroll su window (compatibile desktop, mobile e touch)
-    window.addEventListener('scroll', checkScroll, { passive: true });
-    return () => window.removeEventListener('scroll', checkScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <AnimatePresence>
-      {isAtTop && (
+      {isVisible && (
         <motion.div
           key="splash-overlay"
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{
             opacity: 0,
-            y: -50,
+            y: -40,
             transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
           }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          onClick={() => setIsVisible(false)}
           /*
-           * IMPORTANTE: pointer-events-none garantisce che l'utente possa
-           * iniziare a scorrere (tramite rotellina del mouse, trackpad o tocco mobile)
-           * senza alcun blocco o ritardo, "attraverso" lo splash fin da subito.
+           * hidden md:flex: su smartphone e schermi piccoli lo splash screen è disattivato
+           * per non bloccare la visualizzazione dei contenuti o generare overlay fissi.
+           * Su desktop scompare scorrendo o cliccando.
            */
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0c0c0e] text-editorial-text select-none pointer-events-none px-6"
+          className="hidden md:flex fixed inset-0 z-50 flex-col items-center justify-center bg-[#0c0c0e] text-editorial-text select-none cursor-pointer px-6"
           style={{ willChange: 'opacity, transform' }}
         >
           {/* Cerchio con la foto */}
@@ -83,7 +80,7 @@ export default function SplashScreen() {
             transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
             className="absolute bottom-10 flex flex-col items-center gap-2 text-neutral-400/80"
           >
-            <span className="text-[10px] tracking-widest uppercase">Scorri per esplorare</span>
+            <span className="text-[10px] tracking-widest uppercase">Scorri o clicca per esplorare</span>
             <div className="w-[1px] h-8 bg-gradient-to-b from-neutral-400 to-transparent" />
           </motion.div>
         </motion.div>
