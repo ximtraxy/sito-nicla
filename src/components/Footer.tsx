@@ -25,7 +25,7 @@ export default function Footer({
             {photographerName}
           </h3>
           <p className="font-sans text-xs tracking-widest text-neutral-400 uppercase mt-1">
-            Fotografia & Direzione Artistica
+            Fotografia
           </p>
           <p className="font-sans text-xs text-neutral-400 mt-4">
             © {currentYear} {photographerName}. Tutti i diritti riservati.
