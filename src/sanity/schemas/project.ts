@@ -28,6 +28,7 @@ export default defineType({
       description: 'Es: Ritratti, Reportage, Moda, Matrimoni, Editoriale',
       options: {
         list: [
+          { title: 'Street', value: 'Street' },
           { title: 'Ritratti', value: 'Ritratti' },
           { title: 'Reportage', value: 'Reportage' },
           { title: 'Moda & Editoriale', value: 'Moda & Editoriale' },
@@ -85,6 +86,9 @@ export default defineType({
       name: 'gallery',
       title: 'Galleria Immagini',
       type: 'array',
+      options: {
+        layout: 'grid',
+      },
       of: [
         {
           type: 'image',
@@ -104,9 +108,23 @@ export default defineType({
               title: 'Testo Alternativo (Accessibilità)',
             },
           ],
+          preview: {
+            select: {
+              title: 'caption',
+              subtitle: 'alt',
+              media: 'asset',
+            },
+            prepare({ title, subtitle, media }) {
+              return {
+                title: title || 'Immagine Galleria',
+                subtitle: subtitle || '',
+                media: media,
+              };
+            },
+          },
         },
       ],
-      description: 'Carica le foto del servizio. Puoi riordinarle trascinandole.',
+      description: 'Carica più foto contemporaneamente: trascina qui i file o un\'intera cartella dal tuo computer (drag & drop), oppure riordina le miniature trascinandole.',
     }),
   ],
   orderings: [
